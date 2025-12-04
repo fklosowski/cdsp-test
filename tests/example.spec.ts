@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
 
 test("homepage has title", async ({ page }) => {
-  await page.goto(process.env.TEST_APP_URL!);
+  await page.goto('https://fk-test-ci-instance-01.ps-01-platformos.com/');
 
   const heading = page.getByRole("heading");
   await expect(heading).toHaveText(/Contact Us/);
 });
+
 
 test("page has expected elements", async ({ page }) => {
   await page.goto(process.env.TEST_APP_URL!);
@@ -18,6 +19,7 @@ test("page has expected elements", async ({ page }) => {
   await expect(heading).toBeVisible();
   await expect(emailField).toBeVisible();
   await expect(messageField).toBeVisible();
+  await expect(sendButton).toBeVisible();
 });
 
 test('user can submit "Contact us" form - happy path', async ({ page }) => {
