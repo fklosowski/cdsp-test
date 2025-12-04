@@ -10,7 +10,7 @@ test("homepage has title", async ({ page }) => {
 test("page has expected elements", async ({ page }) => {
   await page.goto(process.env.TEST_APP_URL!);
 
-  const heading = page.getByRole("heading").filter({ hasText: "Contact US" });
+  const heading = page.getByRole("heading").filter({ hasText: "Contact Us" });
   const emailField = page.getByRole("textbox", { name: "Email" });
   const messageField = page.locator("textarea");
   const sendButton = page.getByRole("button", { name: "Send" });
